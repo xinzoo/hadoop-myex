@@ -18,7 +18,7 @@ public class MaxTemperatureMapper extends Mapper<LongWritable, Text, Text, IntWr
      * quality质量：93开始取1位
      */
     @Override
-    public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+    public void map(LongWritable key, Text value, Mapper<LongWritable, Text, Text, IntWritable>.Context context) throws IOException, InterruptedException {
         String line = value.toString();
         String year = line.substring(15,19);
         String quality = line.substring(92,93);
